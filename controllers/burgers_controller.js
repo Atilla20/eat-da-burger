@@ -1,5 +1,3 @@
-
-//Importing burger.js to user it's database functions
 const connection = require("../models/burger.js");
 
 const express = require("express");
