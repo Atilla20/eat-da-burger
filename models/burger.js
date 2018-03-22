@@ -1,7 +1,7 @@
 const orm = require("../config/orm.js");
 
 //console log all of the burger names
-var burgers = {
+var burger = {
     selectAll: function(response) {
         orm.selectAll('burgers', function(res) {
             response(res);
@@ -24,4 +24,4 @@ var burgers = {
     }
 };
 
-module.exports = burgers;
+module.exports = burger;

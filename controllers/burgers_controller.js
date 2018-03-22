@@ -1,17 +1,21 @@
-const connection = require("../models/burger.js");
+const burger = require("../models/burger.js");
 
 const express = require("express");
 
 const router = express.Router();
 
+
+
 //Creating all the routes and seting up the logic within those routes
 router.get("/", function (req, res) {
-    var emptyArrays = {
-        burger: [],
-    };
-
+    /*var emptyArrays = {
+        burger: [],*/
+    res.redirect("/burgers");
+    
+});
+/*
 //Takes data from burger table
-burger.selectAll(function(data) {
+connection.selectAll(function(data) {
     for(var i = 0; i < data.length; i++) {
         emptyArrays.burger.push(data[i]);
     }
@@ -19,6 +23,15 @@ burger.selectAll(function(data) {
 res.render('index', emptyArrays);
 });
 });
+*/
+
+router.get("/burgers", function(req,res) {
+    burger.selectAll(function(burgerData) {
+        res.render("index", {burger_data: burgerData});
+    });
+});
+
+
 
 
 router.post('/create', function(req, res) {

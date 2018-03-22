@@ -1,8 +1,10 @@
+<h1>Burger</h1>
+
 <div class = "row">
     {{!Burgers to devour}}
     <div class="col s6 center-align">
         <ul>
-            {{#each burger}}
+            {{#each burger_data}}
             {{#unless this.devoured}}
             <div class="card light-green">
                 <p>
@@ -23,7 +25,7 @@
         {{ Devoured Burgers}}
         <div class="col s6 center-align">
             <ul>
-                {{#each burger}}
+                {{#each burger_data}}
                     {{#if this.devoured}}
                     <div class="card light-green lighten-2">
                         <p class="grey-text">
